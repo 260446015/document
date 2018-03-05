@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Employment;
  * @description 招聘信息
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/employments.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/employments")
 public interface EmploymentRepository extends CrudRepository<Employment, Long> {
 
 	List<Employment> findByCompanyName(String cname);

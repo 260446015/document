@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Icp;
  * @description 网站备案
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/icp.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/icp")
 public interface IcpRepository extends CrudRepository<Icp, Long> {
 
 	List<Icp> findByCompanyName(String cname);

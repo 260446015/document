@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.IssueRelated;
  * @description 发行相关（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/issueRelated.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/issueRelated")
 public interface IssueRelatedRepository extends CrudRepository<IssueRelated, String> {
 
 	List<IssueRelated> findByCname(String cname);

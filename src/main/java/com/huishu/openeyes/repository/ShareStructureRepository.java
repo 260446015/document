@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.ShareStructure;
  * @description 【web版】股本结构（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/shareStructure.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/shareStructure")
 public interface ShareStructureRepository extends CrudRepository<ShareStructure, String> {
 
 	List<ShareStructure> findByCname(String cname);

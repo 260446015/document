@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.BonusInfo;
  * @description 【web版】分红情况（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/bonusInfo.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/bonusInfo")
 public interface BonusInfoRepository extends CrudRepository<BonusInfo, String> {
 
 	List<BonusInfo> findByCname(String cname);

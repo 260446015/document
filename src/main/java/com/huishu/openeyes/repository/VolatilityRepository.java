@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Volatility;
  * @description 股票行情
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/volatility.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/volatility")
 public interface VolatilityRepository extends CrudRepository<Volatility, String> {
 
 	List<Volatility> findByCname(String cname);

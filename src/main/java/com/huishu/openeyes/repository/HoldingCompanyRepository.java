@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.HoldingCompany;
  * @description 参股控股（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/holdingCompany.json")
+@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v4/open/holdingCompany")
 public interface HoldingCompanyRepository extends CrudRepository<HoldingCompany, Long> {
 
 	List<HoldingCompany> findByCname(String cname);

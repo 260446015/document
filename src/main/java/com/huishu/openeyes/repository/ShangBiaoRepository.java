@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.ShangBiao;
  * @description 商标信息
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/tm.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/tm")
 public interface ShangBiaoRepository extends CrudRepository<ShangBiao, Long> {
 
 	List<ShangBiao> findByApplicantCn(String cname);

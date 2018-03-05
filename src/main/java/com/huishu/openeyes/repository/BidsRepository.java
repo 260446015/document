@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Bids;
  * @description 
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/bids.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/bids")
 public interface BidsRepository extends CrudRepository<Bids, String> {
 
 	List<Bids> findByCname(String cname);

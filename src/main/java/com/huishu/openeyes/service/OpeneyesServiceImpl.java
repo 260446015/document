@@ -46,6 +46,8 @@ public class OpeneyesServiceImpl implements OpeneyesService {
 					openParams.put("word", v);
 				}else if(k.equalsIgnoreCase("type")){
 					openParams.put("type", v);
+				}else if(k.equalsIgnoreCase("humanName")){
+					openParams.put("humanName", v);
 				}
 			}
 		});

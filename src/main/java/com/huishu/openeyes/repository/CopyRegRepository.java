@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.CopyReg;
  * @description 著作权
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/copyReg.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/copyReg")
 public interface CopyRegRepository extends CrudRepository<CopyReg, Long> {
 
 	List<CopyReg> findByCompanyName(String cname);

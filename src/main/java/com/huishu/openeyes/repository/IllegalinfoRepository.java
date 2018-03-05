@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Illegalinfo;
  * @description 严重违法
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/illegalinfo.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/illegalinfo")
 public interface IllegalinfoRepository extends CrudRepository<Illegalinfo, String> {
 
 	List<Illegalinfo> findByCompanyName(String cname);

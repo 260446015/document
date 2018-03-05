@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.PunishmentInfo;
  * @description 行政处罚
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/punishmentInfo.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/punishmentInfo")
 public interface PunishmentInfoRepository extends CrudRepository<PunishmentInfo, String> {
 
 	List<PunishmentInfo> findByName(String cname);

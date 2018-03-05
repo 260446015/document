@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.TeamMember;
  * @description 核心团队
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/findTeamMember.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findTeamMember")
 public interface TeamMemberRepository extends CrudRepository<TeamMember, Long> {
 
 	List<TeamMember> findByCompanyName(String cname);

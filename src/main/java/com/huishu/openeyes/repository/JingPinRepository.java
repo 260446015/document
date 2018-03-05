@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.JingPin;
  * @description 竞品信息
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/findJingpin.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/findJingpin")
 public interface JingPinRepository extends CrudRepository<JingPin, Long> {
 
 	List<JingPin> findByCname(String cname);

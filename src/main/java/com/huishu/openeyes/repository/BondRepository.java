@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Bond;
  * @description 
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/bond.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/bond")
 public interface BondRepository extends CrudRepository<Bond, Long> {
 
 	List<Bond> findByCname(String cname);

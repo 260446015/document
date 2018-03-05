@@ -13,7 +13,7 @@ import com.huishu.openeyes.entity.open.News;
  * @description 新闻
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/open/news.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v3/open/news")
 public interface NewsRepository extends CrudRepository<News, String> {
 
 	List<News> findByCompanyName(String cname);

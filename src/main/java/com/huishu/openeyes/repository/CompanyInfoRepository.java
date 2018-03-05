@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.CompanyInfo;
  * @description 企业简介（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/companyInfo.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/companyInfo")
 public interface CompanyInfoRepository extends CrudRepository<CompanyInfo, String> {
 
 	List<CompanyInfo> findByCompanyName(String cname);

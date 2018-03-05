@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.TaxCredit;
  * @description 税务评级
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/taxCredit.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/taxCredit")
 public interface TaxCreditRepository extends CrudRepository<TaxCredit, String> {
 
 	List<TaxCredit> findByName(String cname);

@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Patents;
  * @description 专利
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/patents.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/patents")
 public interface PatentsRepository extends CrudRepository<Patents, Long> {
 
 	List<Patents> findByApplicantName(String cname);

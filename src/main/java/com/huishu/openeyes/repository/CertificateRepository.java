@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Certificate;
  * @description 资质证书
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/certificate.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/certificate")
 public interface CertificateRepository extends CrudRepository<Certificate, String> {
 
 	List<Certificate> findByCname(String cname);

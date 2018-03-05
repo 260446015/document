@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Inverst;
  * @description 对外投资
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/inverst.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/inverst")
 public interface InverstRepository extends CrudRepository<Inverst, Long> {
 
 	List<Inverst> findByCname(String cname);

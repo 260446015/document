@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.ZhixingInfo;
  * @description 被执行人
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/zhixinginfo.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/zhixinginfo")
 public interface ZhixingInfoRepository extends CrudRepository<ZhixingInfo, String> {
 
 	List<ZhixingInfo> findByCname(String cname);

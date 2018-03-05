@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.HistoryRongZi;
  * @description 融资历史
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/findHistoryRongzi.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findHistoryRongzi")
 public interface HistoryRongZiRepository extends CrudRepository<HistoryRongZi, Long> {
 
 	List<HistoryRongZi> findByCompanyName(String companyName);

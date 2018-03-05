@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Purchaseland;
  * @description 购地信息
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/purchaseLand.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/purchaseLand")
 public interface PurchaselandRepository extends CrudRepository<Purchaseland, Long> {
 
 	List<Purchaseland> findByCname(String cname);

@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Branch;
  * @description 分支机构
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/branch.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/branch")
 public interface BranchRepository extends CrudRepository<Branch, Long> {
 
 	List<Branch> findByCompanyName(String cname);

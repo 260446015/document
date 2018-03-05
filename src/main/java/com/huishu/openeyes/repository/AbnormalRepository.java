@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Abnormal;
  * @description 
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/abnormal.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/abnormal")
 public interface AbnormalRepository extends CrudRepository<Abnormal, String>{
 
 	List<Abnormal> findByCompanyName(String cname);

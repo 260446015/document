@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.TouZi;
  * @description 投资案例
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/findTzanli.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findTzanli")
 public interface TouZiRepository extends CrudRepository<TouZi, Long> {
 
 	List<TouZi> findByCompanyName(String cname);

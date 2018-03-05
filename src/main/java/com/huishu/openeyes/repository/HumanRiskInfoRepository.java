@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.HumanRiskInfo;
  * @description 人风险
  * @version
  */
-@OpenEnum(price=0.1,url="https://open.api.tianyancha.com/services/v3/newopen/humanRiskInfo.json")
+@OpenEnum(price=0.1,url="http://open.api.tianyancha.com/services/v4/open/humanRiskInfo")
 public interface HumanRiskInfoRepository extends CrudRepository<HumanRiskInfo, Long> {
 
 	List<HumanRiskInfo> findByCompanyNameAndHumanName(String cname, String humanName);

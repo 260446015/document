@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Dishonest;
  * @description 失信人
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/dishonest.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/dishonest")
 public interface DishonestRepository extends CrudRepository<Dishonest, Long> {
 
 	List<Dishonest> findByIname(String cname);

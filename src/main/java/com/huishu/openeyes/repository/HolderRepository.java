@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Holder;
  * @description 股东信息
  * @version
  */
-@OpenEnum(price=0.1,url="https://open.api.tianyancha.com/services/v3/newopen/holder.json")
+@OpenEnum(price=0.1,url="http://open.api.tianyancha.com/services/v4/open/holder")
 public interface HolderRepository extends CrudRepository<Holder, Long> {
 
 	List<Holder> findByCname(String cname);

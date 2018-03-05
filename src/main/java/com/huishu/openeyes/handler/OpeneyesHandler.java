@@ -212,7 +212,7 @@ public class OpeneyesHandler implements InvocationHandler {
                 info.setCreationTime(System.currentTimeMillis());
                 baseInfoRepository.save(info);
             } else if ("staff".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("data").getJSONArray("result");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null) {
                     List<Staff> list = new ArrayList<>();
                     jsonArray.forEach((obj) -> {
@@ -224,7 +224,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     staffRepository.save(list);
                 }
             } else if ("branch".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("data").getJSONArray("result");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null) {
                     List<Branch> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -236,7 +236,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     branchRepository.save(list);
                 }
             } else if ("HistoryRongZi".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONObject("page").getJSONArray("rows");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<HistoryRongZi> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -249,7 +249,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     historyRongZiRepository.save(list);
                 }
             } else if ("TeamMember".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONObject("page").getJSONArray("rows");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<TeamMember> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -260,7 +260,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     teamMemberRepository.save(list);
                 }
             } else if ("ProductInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONObject("page").getJSONArray("rows");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<ProductInfo> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -271,7 +271,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     productInfoRepository.save(list);
                 }
             } else if ("TouZi".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONObject("page").getJSONArray("rows");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<TouZi> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -283,7 +283,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     touZiRepository.save(list);
                 }
             } else if ("JingPin".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONObject("page").getJSONArray("rows");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<JingPin> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -297,7 +297,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     jingPinRepository.save(list);
                 }
             } else if ("ShangBiao".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<ShangBiao> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -308,7 +308,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     shangBiaoRepository.save(list);
                 }
             } else if ("Patents".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<Patents> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -319,7 +319,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     patentsRepository.save(list);
                 }
             } else if ("CopyReg".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<CopyReg> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -331,7 +331,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     copyRegRepository.save(list);
                 }
             } else if ("Icp".equalsIgnoreCase(method)) {
-                JSONArray jsonArray = openEyesTarget.getJSONArray("data");
+                JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<Icp> list = new ArrayList<>();
                     jsonArray.forEach(obj -> {
@@ -344,7 +344,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     icpRepository.save(list);
                 }
             } else if ("Abnormal".equalsIgnoreCase(method)) {
-                JSONArray abnormal = openEyesTarget.getJSONObject("data").getJSONArray("result");
+                JSONArray abnormal = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (abnormal != null) {
                     List<Abnormal> list = new ArrayList<>();
                     abnormal.forEach(obj -> {
@@ -358,7 +358,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     abnormalRepository.save(list);
                 }
             } else if ("PunishmentInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<PunishmentInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -371,7 +371,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     punishmentInfoRepository.save(list);
                 }
             } else if ("Illegalinfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Illegalinfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -385,7 +385,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     illegalinfoRepository.save(list);
                 }
             } else if ("OwnTax".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<OwnTax> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -412,7 +412,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     newsRepository.save(list);
                 }
             } else if ("Dishonest".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Dishonest> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -423,7 +423,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     dishonestRepository.save(list);
                 }
             } else if ("RiskInfo".equalsIgnoreCase(method)) {
-                JSONArray internalList = openEyesTarget.getJSONObject("data").getJSONArray("internalList");
+                JSONArray internalList = openEyesTarget.getJSONObject("result").getJSONArray("internalList");
                 List<RiskInfo> list = new ArrayList<>();
                 if (internalList != null) {
                     internalList.forEach(obj -> {
@@ -434,7 +434,7 @@ public class OpeneyesHandler implements InvocationHandler {
                         list.add(parseObject);
                     });
                 }
-                JSONArray externalList = openEyesTarget.getJSONObject("data").getJSONArray("externalList");
+                JSONArray externalList = openEyesTarget.getJSONObject("result").getJSONArray("externalList");
                 if (externalList != null) {
                     externalList.forEach(obj -> {
                         RiskInfo parseObject = JSONObject.parseObject(obj.toString(), RiskInfo.class);
@@ -448,7 +448,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     riskInfoRepository.save(list);
                 }
             } else if ("HumanRiskInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("externalList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("externalList");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<HumanRiskInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -460,7 +460,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     humanRiskInfoRepository.save(list);
                 }
             } else if ("RiskDetail".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("dataList");
                 String searchId = params.get("id");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<RiskDetail> list = new ArrayList<>();
@@ -476,7 +476,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     riskDetailRepository.save(list);
                 }
             } else if ("TaxCredit".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<TaxCredit> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -491,7 +491,7 @@ public class OpeneyesHandler implements InvocationHandler {
             } else if ("sousuo".equalsIgnoreCase(method)) {
                 //待定
             } else if ("Holder".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("result");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Holder> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -511,7 +511,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     holderRepository.save(list);
                 }
             } else if ("ChangeInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("result");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<ChangeInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -525,7 +525,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     changeInfoRepository.save(list);
                 }
             } else if ("Inverst".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("result");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Inverst> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -537,7 +537,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     inverstRepository.save(list);
                 }
             } else if ("Bids".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Bids> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -559,7 +559,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     bidsRepository.save(list);
                 }
             } else if ("Bond".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("bondList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Bond> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -568,9 +568,10 @@ public class OpeneyesHandler implements InvocationHandler {
                         parseObject.setCname(name);
                         list.add(parseObject);
                     });
+                    bondRepository.save(list);
                 }
             } else if ("Purchaseland".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("companyPurchaseLandList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Purchaseland> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -612,7 +613,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     employmentRepository.save(list);
                 }
             } else if ("CheckInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<CheckInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -626,7 +627,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     checkInfoRepository.save(list);
                 }
             } else if ("AppbkInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<AppbkInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -640,7 +641,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     appbkInfoRepository.save(list);
                 }
             } else if ("LawSuit".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<LawSuit> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -652,7 +653,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     lawSuitRepository.save(list);
                 }
             } else if ("CourtAnnouncement".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONArray("courtAnnouncements");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<CourtAnnouncement> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -664,7 +665,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     courtAnnouncementRepository.save(list);
                 }
             } else if ("ZhixingInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("items");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<ZhixingInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -678,7 +679,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     zhixingInfoRepository.save(list);
                 }
             } else if ("Volatility".equalsIgnoreCase(method)) {
-                JSONObject jsonArr = openEyesTarget.getJSONObject("data");
+                JSONObject jsonArr = openEyesTarget.getJSONObject("result");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     Volatility parseObject = JSONObject.parseObject(jsonArr.toString(), Volatility.class);
                     parseObject.setCreationTime(System.currentTimeMillis());
@@ -688,7 +689,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     volatilityRepository.save(parseObject);
                 }
             } else if ("CompanyInfo".equalsIgnoreCase(method)) {
-                JSONObject jsonArr = openEyesTarget.getJSONObject("data");
+                JSONObject jsonArr = openEyesTarget.getJSONObject("result");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     CompanyInfo parseObject = JSONObject.parseObject(jsonArr.toJSONString(), CompanyInfo.class);
                     parseObject.setCreationTime(System.currentTimeMillis());
@@ -697,7 +698,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     companyInfoRepository.save(parseObject);
                 }
             } else if ("SeniorExecutive".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<SeniorExecutive> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -710,8 +711,8 @@ public class OpeneyesHandler implements InvocationHandler {
                     });
                     seniorExecutiveRepository.save(list);
                 }
-            } else if ("HoldingCompany".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+            } else if ("HoldingCompany".equalsIgnoreCase(method)) {//---------------
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<HoldingCompany> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -723,7 +724,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     holdingCompanyRepository.save(list);
                 }
             } else if ("Certificate".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("resultList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Certificate> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -734,8 +735,8 @@ public class OpeneyesHandler implements InvocationHandler {
                     });
                     certificateRepository.save(list);
                 }
-            } else if ("Announcement".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+            } else if ("Announcement".equalsIgnoreCase(method)) {//-------------
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Announcement> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -747,7 +748,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     announcementRepository.save(list);
                 }
             } else if ("ShareHolder".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("holderList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("holderList");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<ShareHolder> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -759,7 +760,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     shareHolderRepository.save(list);
                 }
             } else if ("IssueRelated".equalsIgnoreCase(method)) {
-                JSONObject jsonArr = openEyesTarget.getJSONObject("data");
+                JSONObject jsonArr = openEyesTarget.getJSONObject("result");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     IssueRelated parseObject = JSONObject.parseObject(jsonArr.toJSONString(), IssueRelated.class);
                     parseObject.setCreationTime(System.currentTimeMillis());
@@ -769,7 +770,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     issueRelatedRepository.save(parseObject);
                 }
             } else if ("ShareStructure".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("dataList");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<ShareStructure> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -782,8 +783,8 @@ public class OpeneyesHandler implements InvocationHandler {
                     });
                     shareStructureRepository.save(list);
                 }
-            } else if ("EquityChange".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+            } else if ("EquityChange".equalsIgnoreCase(method)) {//-------------------------------
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<EquityChange> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -797,7 +798,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     equityChangeRepository.save(list);
                 }
             } else if ("BonusInfo".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<BonusInfo> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -811,7 +812,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     bonusInfoRepository.save(list);
                 }
             } else if ("Allotmen".equalsIgnoreCase(method)) {
-                JSONArray jsonArr = openEyesTarget.getJSONObject("data").getJSONArray("dataList");
+                JSONArray jsonArr = openEyesTarget.getJSONObject("result").getJSONArray("dataList");
                 if (jsonArr != null || jsonArr.size() == 0) {
                     List<Allotmen> list = new ArrayList<>();
                     jsonArr.forEach(obj -> {
@@ -837,7 +838,7 @@ public class OpeneyesHandler implements InvocationHandler {
     }
 
     private boolean checkMessage(JSONObject data, Map<String, String> params) {
-        log.info("当前检查数据为:" + data);
+        log.info("当前检查数据为:" + data + "参数为:" + params);
         if (data.size() == 0) {
             return false;
         }
@@ -923,7 +924,7 @@ public class OpeneyesHandler implements InvocationHandler {
     }
 
     private JSONObject searchFromLocal(Map<String, String> params) throws Exception {
-        log.info("查询本地数据库开始-----------------");
+        log.info("查询本地数据库开始-------,参数为:" + params);
         JSONObject resultData = new JSONObject();
         String method = params.get("method");
         String name = params.get("name");
@@ -956,13 +957,14 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("result", list);
-                    resultData.put("data", inList);
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             staffRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -978,14 +980,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("result", list);
-                    resultData.put("data", inList);
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             holderRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1001,14 +1004,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("result", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             inverstRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1024,14 +1029,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("result", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             changeInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1049,13 +1056,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("result", list);
-                    resultData.put("data", inList);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             branchRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1071,15 +1080,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("rows", list);
-                    JSONObject inList2 = new JSONObject();
-                    inList2.put("page", inList);
-                    resultData.put("result", inList2);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             historyRongZiRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1095,15 +1104,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("rows", list);
-                    JSONObject page = new JSONObject();
-                    page.put("page", inList);
-                    resultData.put("result", page);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             teamMemberRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1119,15 +1128,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("rows", list);
-                    JSONObject page = new JSONObject();
-                    page.put("page", inList);
-                    resultData.put("result", page);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             productInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1143,13 +1152,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("result", inList);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             touZiRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1165,15 +1176,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("rows", list);
-                    JSONObject outList = new JSONObject();
-                    outList.put("page", inList);
-                    resultData.put("result", outList);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             jingPinRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1189,14 +1200,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             lawSuitRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1212,12 +1225,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    resultData.put("courtAnnouncements", list);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             courtAnnouncementRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1233,14 +1250,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("result", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             dishonestRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1256,14 +1275,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             zhixingInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1279,14 +1300,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("data", list);
-                    resultData.put("result", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             abnormalRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1302,13 +1325,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             punishmentInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1324,13 +1349,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("result", inList);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             illegalinfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1346,14 +1373,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("result", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             ownTaxRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1369,14 +1398,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             bidsRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1392,14 +1423,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("bondList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             bondRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1415,14 +1448,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("companyPurchaseLandList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             purchaselandRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1438,14 +1473,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("result", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             employmentRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1461,14 +1498,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             taxCreditRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1484,14 +1523,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             checkInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1507,14 +1548,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             appbkInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1530,14 +1573,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("resultList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             certificateRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1553,13 +1598,15 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             shangBiaoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1575,14 +1622,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             patentsRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1598,14 +1647,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("items", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             copyRegRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1621,12 +1672,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    resultData.put("data", list);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             icpRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1642,12 +1697,14 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    resultData.put("data", list.get(0));
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             volatilityRepository.delete(list);
+                        } else {
+                            resultData.put("result", list.get(0));
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1663,12 +1720,14 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    resultData.put("data", list.get(0));
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             companyInfoRepository.delete(list);
+                        } else {
+                            resultData.put("result", list.get(0));
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1684,14 +1743,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             holdingCompanyRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1707,14 +1768,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             seniorExecutiveRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1730,14 +1793,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             announcementRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1753,14 +1818,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("holderList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             shareHolderRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("holderList", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1776,12 +1843,14 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    resultData.put("data", list.get(0));
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             issueRelatedRepository.delete(list);
+                        } else {
+                            resultData.put("result", list.get(0));
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1797,14 +1866,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             shareStructureRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("dataList", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1820,14 +1891,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             equityChangeRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1843,14 +1916,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             bonusInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1866,14 +1941,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             allotmenRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("items", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1891,17 +1968,19 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    internal = list.stream().filter((riskInfo -> riskInfo.getRiskType().equals("internalList"))).collect(Collectors.toList());
-                    external = list.stream().filter((riskInfo -> riskInfo.getRiskType().equals("externalList"))).collect(Collectors.toList());
-                    JSONObject inList = new JSONObject();
-                    inList.put("internalList", internal);
-                    inList.put("externalList", external);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             riskInfoRepository.delete(list);
+                        } else {
+                            internal = list.stream().filter((riskInfo -> riskInfo.getRiskType().equals("internalList"))).collect(Collectors.toList());
+                            external = list.stream().filter((riskInfo -> riskInfo.getRiskType().equals("externalList"))).collect(Collectors.toList());
+                            JSONObject inList = new JSONObject();
+                            inList.put("internalList", internal);
+                            inList.put("externalList", external);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1918,14 +1997,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("dataList", list);
-                    resultData.put("result", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             riskDetailRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("dataList", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1942,14 +2023,16 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    JSONObject inList = new JSONObject();
-                    inList.put("externalList", list);
-                    resultData.put("data", inList);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             humanRiskInfoRepository.delete(list);
+                        } else {
+                            JSONObject inList = new JSONObject();
+                            inList.put("externalList", list);
+                            resultData.put("result", inList);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());
@@ -1965,12 +2048,14 @@ public class OpeneyesHandler implements InvocationHandler {
                 privateParams.put("method", method);
                 threadLocal.set(privateParams);
                 if (list.size() > 0) {
-                    resultData.put("result", list);
+
                     //当用户查询时，如果存储时间超过1个月就重新查询
                     try {
                         long time = System.currentTimeMillis() - list.get(0).getCreationTime();
                         if (time >= KeyConstan.FAILURE_TIME) {
                             newsRepository.delete(list);
+                        } else {
+                            resultData.put("result", list);
                         }
                     } catch (Exception e) {
                         log.info("删除过期数据出错:", e.getMessage());

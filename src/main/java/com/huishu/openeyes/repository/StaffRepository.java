@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Staff;
  * @description 主要人员
  * @version
  */
-@OpenEnum(price=0.1,url="https://open.api.tianyancha.com/services/v3/newopen/staff.json")
+@OpenEnum(price=0.1,url="http://open.api.tianyancha.com/services/v4/open/staff")
 public interface StaffRepository extends CrudRepository<Staff, Long> {
 
 	List<Staff> findByCname(String cname);

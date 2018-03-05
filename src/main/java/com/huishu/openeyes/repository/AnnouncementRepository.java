@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Announcement;
  * @description 
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/announcement.json")
+@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v4/open/announcement")
 public interface AnnouncementRepository extends CrudRepository<Announcement, String> {
 
 	List<Announcement> findByCname(String cname);

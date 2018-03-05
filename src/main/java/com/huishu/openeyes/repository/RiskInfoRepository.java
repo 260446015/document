@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.RiskInfo;
  * @description 企业风险
  * @version
  */
-@OpenEnum(price=0.1,url="https://open.api.tianyancha.com/services/v3/newopen/riskInfo.json")
+@OpenEnum(price=0.1,url="http://open.api.tianyancha.com/services/v4/open/riskInfo")
 public interface RiskInfoRepository extends CrudRepository<RiskInfo, Long> {
 
 	List<RiskInfo> findByCname(String cname);

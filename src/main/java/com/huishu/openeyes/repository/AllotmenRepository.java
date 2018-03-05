@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.Allotmen;
  * @description 
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/allotmen.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/allotmen")
 public interface AllotmenRepository extends CrudRepository<Allotmen, String> {
 
 	List<Allotmen> findByCname(String cname);

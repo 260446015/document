@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.ChangeInfo;
  * @description 变更记录
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/changeinfo.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/changeinfo")
 public interface ChangeInfoRepository extends CrudRepository<ChangeInfo, String> {
 
 	List<ChangeInfo> findByCname(String cname);

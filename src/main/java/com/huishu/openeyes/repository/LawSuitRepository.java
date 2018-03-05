@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.LawSuit;
  * @description 法律诉讼
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/lawSuit.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/lawSuit")
 public interface LawSuitRepository extends CrudRepository<LawSuit, String> {
 
 	List<LawSuit> findByCname(String cname);

@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.CheckInfo;
  * @description 抽查检查
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/checkInfo.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/checkInfo")
 public interface CheckInfoRepository extends CrudRepository<CheckInfo, String> {
 
 	List<CheckInfo> findByCname(String cname);

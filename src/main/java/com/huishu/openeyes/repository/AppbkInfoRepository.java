@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.AppbkInfo;
  * @description 
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/appbkInfo.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/appbkInfo")
 public interface AppbkInfoRepository extends CrudRepository<AppbkInfo, String> {
 
 	List<AppbkInfo> findByCname(String cname);

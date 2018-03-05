@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.CourtAnnouncement;
  * @description 法院公告
  * @version
  */
-@OpenEnum(price=0.05,url="https://open.api.tianyancha.com/services/v3/newopen/courtAnnouncement.json")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/courtAnnouncement")
 public interface CourtAnnouncementRepository extends CrudRepository<CourtAnnouncement, Long> {
 
 	List<CourtAnnouncement> findByCname(String cname);

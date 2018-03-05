@@ -14,7 +14,7 @@ import com.huishu.openeyes.entity.open.SeniorExecutive;
  * @description 高管信息（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v3/newopen/seniorExecutive.json")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/seniorExecutive")
 public interface SeniorExecutiveRepository extends CrudRepository<SeniorExecutive, String> {
 
 	List<SeniorExecutive> findByCname(String cname);

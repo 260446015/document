@@ -12,7 +12,7 @@ import com.huishu.openeyes.entity.open.OwnTax;
  * @description 欠税公告
  * @version
  */
-@OpenEnum(price=0.15,url="https://open.api.tianyancha.com/services/v3/newopen/ownTax.json")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/ownTax")
 public interface OwnTaxRepository extends CrudRepository<OwnTax, String> {
 
 	List<OwnTax> findByName(String cname);

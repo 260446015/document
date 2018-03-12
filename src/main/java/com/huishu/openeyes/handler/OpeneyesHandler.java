@@ -138,6 +138,7 @@ public class OpeneyesHandler implements InvocationHandler {
             }
         } catch (Exception e) {
             log.error("查询本地数据库出错，调用参数为" + params.toString(), e.getMessage());
+            throw e;
         }
         args[1] = threadLocal.get().get("url");
         JSONObject openData = new JSONObject();
@@ -270,7 +271,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     });
                     productInfoRepository.save(list);
                 }
-            } else if ("TouZi".equalsIgnoreCase(method)) {
+            } else if ("findTzanli".equalsIgnoreCase(method)) {
                 JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<TouZi> list = new ArrayList<>();
@@ -296,7 +297,7 @@ public class OpeneyesHandler implements InvocationHandler {
                     });
                     jingPinRepository.save(list);
                 }
-            } else if ("ShangBiao".equalsIgnoreCase(method)) {
+            } else if ("tm".equalsIgnoreCase(method)) {
                 JSONArray jsonArray = openEyesTarget.getJSONObject("result").getJSONArray("items");
                 if (jsonArray != null || jsonArray.size() == 0) {
                     List<ShangBiao> list = new ArrayList<>();
@@ -1142,7 +1143,7 @@ public class OpeneyesHandler implements InvocationHandler {
                         log.info("删除过期数据出错:", e.getMessage());
                     }
                 }
-            } else if (method.equalsIgnoreCase("TouZi")) {
+            } else if (method.equalsIgnoreCase("findTzanli")) {
                 List<TouZi> list = touZiRepository.findByCompanyName(name);
                 OpenEnum annotation = TouZiRepository.class.getAnnotation(OpenEnum.class);
                 double price = annotation.price();
@@ -1588,7 +1589,7 @@ public class OpeneyesHandler implements InvocationHandler {
                         log.info("删除过期数据出错:", e.getMessage());
                     }
                 }
-            } else if (method.equalsIgnoreCase("SHANGBIAO")) {
+            } else if (method.equalsIgnoreCase("tm")) {
                 List<ShangBiao> list = shangBiaoRepository.findByApplicantCn(name);
                 OpenEnum annotation = ShangBiaoRepository.class.getAnnotation(OpenEnum.class);
                 double price = annotation.price();

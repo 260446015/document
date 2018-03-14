@@ -933,7 +933,7 @@ public class OpeneyesHandler implements InvocationHandler {
         try {
             if (method.equalsIgnoreCase("sousuo")) {
                 privateParams.put("price", 0.01);
-                privateParams.put("url", "https://open.api.tianyancha.com/services/v3/newopen/searchV2.json");
+                privateParams.put("url", "http://open.api.tianyancha.com/services/v4/open/searchV2");
                 privateParams.put("method", "sousuo");
                 threadLocal.set(privateParams);
             } else if (method.equalsIgnoreCase("baseInfo")) {

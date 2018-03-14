@@ -24,7 +24,7 @@ public class OpeneyesController extends BaseController{
 	private OpeneyesService openeyesService;
 	@Autowired
 	private OpeneyesHandler handler;
-	@RequestMapping(value="/search.json",method={RequestMethod.GET},params={"method","tag","name"})
+	@RequestMapping(value="/search.json",method={RequestMethod.GET})
 	public JSONObject searchMessage(HttpServletRequest request){
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		Map<String, String> openParam = getOpenParam(parameterMap);

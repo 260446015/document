@@ -1143,7 +1143,7 @@ public class OpeneyesHandler implements InvocationHandler {
                         log.info("删除过期数据出错:", e.getMessage());
                     }
                 }
-            } else if (method.equalsIgnoreCase("findTzanli")) {
+            } else if (method.equalsIgnoreCase("Tzanli")) {
                 List<TouZi> list = touZiRepository.findByCompanyName(name);
                 OpenEnum annotation = TouZiRepository.class.getAnnotation(OpenEnum.class);
                 double price = annotation.price();

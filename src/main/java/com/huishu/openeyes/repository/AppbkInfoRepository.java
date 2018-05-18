@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.AppbkInfo;
  * @description 
  * @version
  */
-@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/appbkInfo")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/appbkInfo",method = MethodMappingEnum.APPBKINFO)
 public interface AppbkInfoRepository extends CrudRepository<AppbkInfo, String> {
 
 	List<AppbkInfo> findByCname(String cname);

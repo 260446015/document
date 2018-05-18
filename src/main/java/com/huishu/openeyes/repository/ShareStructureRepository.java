@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.ShareStructure;
  * @description 【web版】股本结构（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/shareStructure")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/shareStructure",method = MethodMappingEnum.SHARESTRUCTURE)
 public interface ShareStructureRepository extends CrudRepository<ShareStructure, String> {
 
 	List<ShareStructure> findByCname(String cname);

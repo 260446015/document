@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.CourtAnnouncement;
  * @description 法院公告
  * @version
  */
-@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/courtAnnouncement")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/courtAnnouncement",method = MethodMappingEnum.COURTANNOUNCEMENT)
 public interface CourtAnnouncementRepository extends CrudRepository<CourtAnnouncement, Long> {
 
 	List<CourtAnnouncement> findByCname(String cname);

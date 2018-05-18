@@ -14,4 +14,6 @@ public @interface OpenEnum {
 	double price() default 0;
 
 	String url();
+
+	String method();
 }

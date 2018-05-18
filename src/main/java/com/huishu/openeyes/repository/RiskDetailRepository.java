@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,11 +15,11 @@ import com.huishu.openeyes.entity.open.RiskDetail;
  * @description 风险信息
  * @version
  */
-@OpenEnum(price=0.1,url="http://open.api.tianyancha.com/services/v4/open/riskDetail")
+@OpenEnum(price=0.1,url="http://open.api.tianyancha.com/services/v4/open/riskDetail",method = MethodMappingEnum.RISKDETAIL)
 public interface RiskDetailRepository extends CrudRepository<RiskDetail, String> {
 
 	List<RiskDetail> findByCompanyName(String cname);
 
-	List<RiskDetail> findBySearchId(Long id);
+//	List<RiskDetail> findBySearchId(Long id);
 
 }

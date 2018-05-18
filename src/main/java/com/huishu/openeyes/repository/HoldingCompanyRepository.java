@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.HoldingCompany;
  * @description 参股控股（股票）
  * @version
  */
-@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v4/open/holdingCompany")
+@OpenEnum(price=0.07,url="https://open.api.tianyancha.com/services/v4/open/holdingCompany",method = MethodMappingEnum.HOLDINGCOMPANY)
 public interface HoldingCompanyRepository extends CrudRepository<HoldingCompany, Long> {
 
 	List<HoldingCompany> findByCname(String cname);

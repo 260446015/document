@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.TouZi;
  * @description 投资案例
  * @version
  */
-@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findTzanli")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findTzanli",method = MethodMappingEnum.FINDTZANLI)
 public interface TouZiRepository extends CrudRepository<TouZi, Long> {
 
 	List<TouZi> findByCompanyName(String cname);

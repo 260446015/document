@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.ProductInfo;
  * @description 企业业务
  * @version
  */
-@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/getProductInfo")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/getProductInfo",method = MethodMappingEnum.GETPRODUCTINFO)
 public interface ProductInfoRepository extends CrudRepository<ProductInfo, Long> {
 
 	List<ProductInfo> findByCompanyName(String cname);

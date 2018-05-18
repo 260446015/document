@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.JingPin;
  * @description 竞品信息
  * @version
  */
-@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/findJingpin")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/findJingpin",method = MethodMappingEnum.FINDJINGPIN)
 public interface JingPinRepository extends CrudRepository<JingPin, Long> {
 
 	List<JingPin> findByCname(String cname);

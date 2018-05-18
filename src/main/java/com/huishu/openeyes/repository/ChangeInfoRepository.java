@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.ChangeInfo;
  * @description 变更记录
  * @version
  */
-@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/changeinfo")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/changeinfo",method = MethodMappingEnum.CHANGEINFO)
 public interface ChangeInfoRepository extends CrudRepository<ChangeInfo, String> {
 
 	List<ChangeInfo> findByCname(String cname);

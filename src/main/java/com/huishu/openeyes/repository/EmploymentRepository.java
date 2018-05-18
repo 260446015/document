@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.Employment;
  * @description 招聘信息
  * @version
  */
-@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/employments")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/employments",method = MethodMappingEnum.EMPLOYMENTS)
 public interface EmploymentRepository extends CrudRepository<Employment, Long> {
 
 	List<Employment> findByCompanyName(String cname);

@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.Icp;
  * @description 网站备案
  * @version
  */
-@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/icp")
+@OpenEnum(price=0.05,url="http://open.api.tianyancha.com/services/v4/open/icp",method = MethodMappingEnum.ICP)
 public interface IcpRepository extends CrudRepository<Icp, Long> {
 
 	List<Icp> findByCompanyName(String cname);

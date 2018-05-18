@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.HistoryRongZi;
  * @description 融资历史
  * @version
  */
-@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findHistoryRongzi")
+@OpenEnum(price=0.07,url="http://open.api.tianyancha.com/services/v4/open/findHistoryRongzi",method = MethodMappingEnum.FINDHISTORYRONGZI)
 public interface HistoryRongZiRepository extends CrudRepository<HistoryRongZi, Long> {
 
 	List<HistoryRongZi> findByCompanyName(String companyName);

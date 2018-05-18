@@ -2,6 +2,7 @@ package com.huishu.openeyes.repository;
 
 import java.util.List;
 
+import com.huishu.openeyes.openenum.MethodMappingEnum;
 import org.springframework.data.repository.CrudRepository;
 
 import com.huishu.openeyes.annotations.OpenEnum;
@@ -14,7 +15,7 @@ import com.huishu.openeyes.entity.open.Abnormal;
  * @description 
  * @version
  */
-@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/abnormal")
+@OpenEnum(price=0.15,url="http://open.api.tianyancha.com/services/v4/open/abnormal",method = MethodMappingEnum.ABNORMAL)
 public interface AbnormalRepository extends CrudRepository<Abnormal, String>{
 
 	List<Abnormal> findByCompanyName(String cname);
